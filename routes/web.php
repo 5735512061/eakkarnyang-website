@@ -71,7 +71,7 @@ Route::post('/booking-otani-covid-19','FrontendMain\\BookingController@bookingOt
 Route::get('/booking/{model}/{width}/{ratio}{diameter}/{price}','FrontendMain\\BookingController@bookingOtaniCovid19Detail');
 Route::get('/otani-covid-19','FrontendMain\\BookingController@otaniCovid19');
 
-// มาตรการช่วยเหลือจากมิชลิน COVID-19
+// มาตรการช่วยเหลือจากมิชลิน COVID-19 
 Route::get('/booking-michelin-support-phuket','FrontendMain\\BookingController@bookingMichelinCovid19');
 Route::post('/booking-michelin-support-phuket','FrontendMain\\BookingController@bookingMichelinCovid19Post');
 Route::get('/booking-michelin/{model}/{width}/{ratio}{diameter}/{price}','FrontendMain\\BookingController@bookingMichelinCovid19Detail');
