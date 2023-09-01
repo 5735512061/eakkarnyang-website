@@ -42,7 +42,7 @@ class SearchController extends Controller
                             ->join('product_models', 'tyreproducts.model_id', '=', 'product_models.id')
                             ->select('tyreproducts.*','product_models.status')
                             ->where('tyreproducts.status',"เปิด")
-                            ->orderByRaw('FIELD(tyreproducts.subcategory_id,"1","2","12","3","5","501","13","4","6","8","11","7","9")')
+                            ->orderByRaw('FIELD(tyreproducts.subcategory_id,"1","2","12","3","5","501","13","4","6","8","11","7","9","502")')
                             ->orderBy('price','asc')
                             ->get();
         return view('newSystem/frontendMain/product/tyre/tyre-search')->with('diameter',$diameter)
@@ -67,7 +67,7 @@ class SearchController extends Controller
         $tyres = Tyreproduct::where('width','like',$width_search) 
                             ->where('ratio','like',$ratio_search)
                             ->where('diameter','like',$diameter)
-                            ->orderByRaw('FIELD(subcategory_id,"1","2","12","3","5","501","4","6","8","11","7","9")')
+                            ->orderByRaw('FIELD(subcategory_id,"1","2","12","3","5","501","4","6","8","11","7","9","502")')
                             ->orderBy('price','asc')->get();
         return view('newSystem/frontendMain/product/tyre/tyre-search')->with('tyres',$tyres)
                                                                       ->with('widths',$widths)

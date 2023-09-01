@@ -71,7 +71,7 @@ Route::post('/booking-otani-covid-19','FrontendMain\\BookingController@bookingOt
 Route::get('/booking/{model}/{width}/{ratio}{diameter}/{price}','FrontendMain\\BookingController@bookingOtaniCovid19Detail');
 Route::get('/otani-covid-19','FrontendMain\\BookingController@otaniCovid19');
 
-// มาตรการช่วยเหลือจากมิชลิน COVID-19 
+// มาตรการช่วยเหลือจากมิชลิน COVID-19
 Route::get('/booking-michelin-support-phuket','FrontendMain\\BookingController@bookingMichelinCovid19');
 Route::post('/booking-michelin-support-phuket','FrontendMain\\BookingController@bookingMichelinCovid19Post');
 Route::get('/booking-michelin/{model}/{width}/{ratio}{diameter}/{price}','FrontendMain\\BookingController@bookingMichelinCovid19Detail');
@@ -196,6 +196,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('/edit-article-product','BackendMain\AdminController@editArticleProductPost');
 
     Route::post('/search-tyre-front-page', 'BackendMain\AdminController@searchTyreFrontPage');
+    Route::post('/search-tyre-brand-front-page', 'BackendMain\AdminController@searchTyreBrandFrontPage');
+    Route::get('/ajax-brand-front','BackendMain\AdminController@ajax_brand_front');
 });
 
 

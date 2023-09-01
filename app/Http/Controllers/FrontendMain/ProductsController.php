@@ -31,7 +31,7 @@ class ProductsController extends Controller
     public function product($category){
         // ยางรถยนต์
         $tyre_category_id = ProductCategory::where('name_eng',$category)->where('status','เปิด')->value('id');
-        $product_brands = ProductBrand::where('category_id',$tyre_category_id)->orderByRaw('FIELD(id,"1","2","5","501","3","6","4","8","11","12","13")')->get();
+        $product_brands = ProductBrand::where('category_id',$tyre_category_id)->orderByRaw('FIELD(id,"1","2","5","501","3","6","4","8","11","12","13","502")')->get();
 
         // น้ำมันเครื่อง และผ้าเบรก
         $brands = CarBrand::where('status','เปิด')->get();

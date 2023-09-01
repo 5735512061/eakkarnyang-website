@@ -99,6 +99,37 @@
             </div>
         </div>
     </form>
+
+    <h1>ค้นหายางตามยี่ห้อยาง</h1>
+    <form action="{{url('/admin/search-tyre-brand-front-page')}}" enctype="multipart/form-data" method="post">@csrf
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <h3>ยี่ห้อยางรถยนต์</h3>
+                    <select name="brand_id" id="brand" class="form-control form-control-alternative mitr">
+                        @foreach ($brands as $brand => $value)
+                            <option value="{{$value->id}}">{{$value->brand}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <h3>รุ่นยางรถยนต์</h3>
+                    <select name="model_id" id="model" class="form-control form-control-alternative mitr">
+                        @foreach ($models as $model => $value)
+                            <option value="{{$value->id}}">{{$value->model}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-primary my-4 mitr">ค้นหายางรถยนต์</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 <div class="container-fluid">
     <div class="row justify-content-center mt-5">
@@ -162,7 +193,7 @@
     console.log(e);
     var brand_id = e.target.value;
         //ajax
-        $.get('./ajax-brand?cat_id=' + brand_id,function(data){
+        $.get('./ajax-brand-front?cat_id=' + brand_id,function(data){
             $('#model').empty();
             $.each(data, function(index, subcatObj){
                 $('#model').append('<option value="'+subcatObj.id+'">'+subcatObj.model+'</option>');

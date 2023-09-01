@@ -21,7 +21,6 @@ use App\Model\Article;
 use App\Model\ArticleProduct;
 use App\Model\CarBrand;
 use App\Model\Shockproduct;
-
 use Validator;
 
 class AdminController extends Controller
@@ -64,6 +63,8 @@ class AdminController extends Controller
         $batteries = Batteryproduct::paginate($NUM_PAGE);
         $maxs = MaxProduct::paginate($NUM_PAGE);
         $shocks = Shockproduct::paginate($NUM_PAGE);
+        $brands = ProductBrand::get();
+        $models = ProductModel::get();
         $page = $request->input('page');
         $page = ($page != null)?$page:1;
         return view('newSystem/backendMain/admin/product/manage-'.$category)->with('NUM_PAGE',$NUM_PAGE)
@@ -73,7 +74,9 @@ class AdminController extends Controller
                                                                            ->with('tyres',$tyres)
                                                                            ->with('batteries',$batteries)
                                                                            ->with('maxs',$maxs)
-                                                                           ->with('shocks',$shocks);
+                                                                           ->with('shocks',$shocks)
+                                                                           ->with('brands',$brands)
+                                                                           ->with('models',$models);
     }
 
     public function createBrandTyre(Request $request) {
@@ -930,11 +933,31 @@ class AdminController extends Controller
                             ->where('ratio',$ratio)
                             ->where('diameter',$diameter)
                             ->orderBy('diameter','asc')->orderBy('width','asc')->orderBy('ratio','asc')->paginate($NUM_PAGE);
+        $brands = ProductBrand::get();
         $page = $request->input('page');
         $page = ($page != null)?$page:1;
         return view('newSystem/backendMain/admin/product/manage-'.'tyres')->with('NUM_PAGE',$NUM_PAGE)
                                                                           ->with('page',$page)
-                                                                          ->with('tyres',$tyres);
+                                                                          ->with('tyres',$tyres)
+                                                                          ->with('brands',$brands);
+    }
+
+    public function searchTyreBrandFrontPage(Request $request) {
+        $NUM_PAGE = 100;
+        $subcategory_id = $request->get('brand_id');
+        $model_id = $request->get('model_id');
+        $tyres = Tyreproduct::where('subcategory_id',$subcategory_id)
+                            ->where('model_id',$model_id)
+                            ->orderBy('diameter','asc')->orderBy('width','asc')->orderBy('ratio','asc')->paginate($NUM_PAGE);
+        $brands = ProductBrand::get();
+        $models = ProductModel::get();
+        $page = $request->input('page');
+        $page = ($page != null)?$page:1;
+        return view('newSystem/backendMain/admin/product/manage-'.'tyres')->with('NUM_PAGE',$NUM_PAGE)
+                                                                          ->with('page',$page)
+                                                                          ->with('tyres',$tyres)
+                                                                          ->with('brands',$brands)
+                                                                          ->with('models',$models);
     }
     
     public function rules_createCategoryPost() {

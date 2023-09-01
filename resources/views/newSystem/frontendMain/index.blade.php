@@ -67,6 +67,15 @@
                         </picture>
                     </a>
                 </div>
+                <div class="carousel-item">
+                    <a href="{{url('/promotion/promotion')}}" target="_blank">
+                        <picture>
+                            <source type="image/webp" srcset="{{ asset('/images/slideindex/slide-04.webp')}}" class="img-responsive" width="100%"> 
+                            <source type="image/jpeg" srcset="{{ asset('/images/slideindex/slide-04.jpg')}}" class="img-responsive" width="100%">
+                            <img src="{{ asset('/images/slideindex/slide-04.jpg')}}" class="img-responsive" width="100%">
+                        </picture>
+                    </a>
+                </div>
               </div>
               <a class="carousel-control-prev" href="#bs4-slide-carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
