@@ -460,20 +460,8 @@
 							<source type="image/jpeg" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" height="10%;" width="20%">
 							<center><img src="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" width="100%"></center>
 						</picture>
-					@elseif($value->subcategory_id == $bf_id)
-						@if($value->diameter == 'R13' || $value->diameter == 'R14' || $value->diameter == 'R15' || $value->diameter == 'R16')
-							<picture>
-								<source type="image/webp" srcset="{{ asset('/images/hotprice/hotprice1000.webp')}}" class="img-responsive" height="10%;" width="20%">
-								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/hotprice1000.png')}}" class="img-responsive" height="10%;" width="20%">
-								<center><img src="{{ asset('/images/hotprice/hotprice1000.png')}}" class="img-responsive" width="100%"></center>
-							</picture>
-							<center><h1 style="color: red;">หรือ</h1></center>
-							<picture>
-								<source type="image/webp" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.webp')}}" class="img-responsive" height="10%;" width="20%">
-								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" height="10%;" width="20%">
-								<center><img src="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" width="100%"></center>
-							</picture>
-						@elseif($value->diameter == 'R17' || $value->diameter == 'R18' || $value->diameter == 'R19' || $value->diameter == 'R20' || $value->diameter == 'R21' || $value->diameter == 'R22')
+					@elseif($value->model_id == $touring_id)
+						@if($value->diameter == 'R18' || $value->diameter == 'R19' || $value->diameter == 'R20' || $value->diameter == 'R21' || $value->diameter == 'R22')
 							<picture>
 								<source type="image/webp" srcset="{{ asset('/images/hotprice/hotprice2000.webp')}}" class="img-responsive" height="10%;" width="20%">
 								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/hotprice2000.png')}}" class="img-responsive" height="10%;" width="20%">
@@ -485,12 +473,24 @@
 								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" height="10%;" width="20%">
 								<center><img src="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" width="100%"></center>
 							</picture>
+						@elseif($value->diameter == 'R13' || $value->diameter == 'R14' || $value->diameter == 'R15' || $value->diameter == 'R16' || $value->diameter == 'R17')
+							<picture>
+								<source type="image/webp" srcset="{{ asset('/images/hotprice/hotprice1000.webp')}}" class="img-responsive" height="10%;" width="20%">
+								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/hotprice1000.png')}}" class="img-responsive" height="10%;" width="20%">
+								<center><img src="{{ asset('/images/hotprice/hotprice1000.png')}}" class="img-responsive" width="100%"></center>
+							</picture>
+							<center><h1 style="color: red;">หรือ</h1></center>
+							<picture>
+								<source type="image/webp" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.webp')}}" class="img-responsive" height="10%;" width="20%">
+								<source type="image/jpeg" srcset="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" height="10%;" width="20%">
+								<center><img src="{{ asset('/images/hotprice/ฟรีล้างแอร์.png')}}" class="img-responsive" width="100%"></center>
+							</picture>
 						@endif
 					@elseif($value->subcategory_id == $otani_id)
 					<picture>
 						<source type="image/webp" srcset="{{ asset('/images/hotprice/hotprice10.webp')}}" class="img-responsive" height="10%;" width="20%">
-						<source type="image/jpeg" srcset="{{ asset('/images/hotprice/hotprice10.png')}}" class="img-responsive" height="10%;" width="20%">
-						<center><img src="{{ asset('/images/hotprice/hotprice10.png')}}" class="img-responsive" width="100%"></center>
+						<source type="image/jpeg" srcset="{{ asset('/images/hotprice/hotprice10.jpg')}}" class="img-responsive" height="10%;" width="20%">
+						<center><img src="{{ asset('/images/hotprice/hotprice10.jpg')}}" class="img-responsive" width="100%"></center>
 					</picture>
 					<center><h1 style="color: red;">หรือ</h1></center>
 					<picture>
