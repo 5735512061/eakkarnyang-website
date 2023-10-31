@@ -35,6 +35,12 @@
       padding-right: 1.5rem;
   }
 </style>
+<section class="div-halloween">
+    <img src="https://i.imgur.com/EtCPE3S.png" class="spider">
+    <img src="https://i.imgur.com/VlAEovB.png" class="pumpkin01">
+    <img src="https://i.imgur.com/z1sM4My.png" class="pumpkin02">
+    <img src="https://i.imgur.com/7XIEQS1.png" class="spiderWeb">
+</section>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-lg-12 col-xl-12">

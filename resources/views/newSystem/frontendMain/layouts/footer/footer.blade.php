@@ -318,7 +318,7 @@
 							</a>
 						</li>
 					</ul>
-					<script src="https://www.counters-free.net/count/1amu"></script>
+					{{-- <script src="https://www.counters-free.net/count/1amu"></script> --}}
 				</div>
 			</div>
 		</div>

@@ -18,7 +18,6 @@
 <script type="text/javascript" src="{{asset('js/navbar.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/scroll.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/snow.js')}}"></script>
-
 <!-- Script Search Size Tyre -->
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
